@@ -1,0 +1,278 @@
+/* ===============================
+   GOOGLE FONTS
+================================ */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+/* ===============================
+   GLOBAL RESET
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===============================
+   BODY
+================================ */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f6f1eb; /* paper background */
+  color: #2e2e2e;
+  line-height: 1.6;
+}
+
+/* ===============================
+   HEADER
+================================ */
+header {
+  background-color: #2f2a25;
+  color: #ffffff;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+header p {
+  font-size: 14px;
+  color: #ddd;
+}
+
+/* ===============================
+   SECTIONS (CATEGORIES)
+================================ */
+section {
+  padding: 40px 8%;
+}
+
+section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  margin-bottom: 25px;
+  border-left: 5px solid #c07a3e;
+  padding-left: 12px;
+  color: #2f2a25;
+}
+
+/* ===============================
+   BOOK LIST GRID
+================================ */
+section {
+  display: block;
+}
+
+article {
+  background-color: #ffffff;
+  padding: 18px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+article:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+
+article h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #2e2e2e;
+}
+
+/* ===============================
+   READ BUTTON
+================================ */
+article a {
+  text-decoration: none;
+  padding: 8px 18px;
+  background-color: #c07a3e;
+  color: #ffffff;
+  border-radius: 20px;
+  font-size: 14px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+article a:hover {
+  background-color: #a9652f;
+  transform: scale(1.05);
+}
+
+/* ===============================
+   DIVIDER
+================================ */
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 0 8%;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+footer {
+  background-color: #2f2a25;
+  color: #cccccc;
+  text-align: center;
+  padding: 18px;
+  font-size: 13px;
+}
+
+/* ===============================
+   RESPONSIVE (MOBILE)
+================================ */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 28px;
+  }
+
+  section {
+    padding: 30px 5%;
+  }
+
+  article {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  article a {
+    align-self: flex-start;
+  }
+}
+/* ===============================
+   CATEGORY NAVIGATION
+================================ */
+nav {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+nav button {
+  background-color: transparent;
+  border: 1.5px solid #c07a3e;
+  color: #c07a3e;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.2s ease;
+}
+
+nav button:hover {
+  background-color: #c07a3e;
+  color: #ffffff;
+}
+
+nav button:focus {
+  outline: none;
+}
+/* BODY */
+body {
+  background: linear-gradient(to right, #8e5a2b, #c68642);
+  color: #333;
+  min-height: 100vh;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+header h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-block;
+  margin: 15px 10px 0;
+  padding: 12px 25px;
+  background: #b87333;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #8e5a2b;
+}
+
+/* NAV */
+nav {
+  text-align: center;
+  margin: 25px 0;
+}
+
+nav button {
+  margin: 5px;
+  padding: 10px 18px;
+  border: none;
+  background: #fff;
+  color: #8e5a2b;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+nav button:hover {
+  background: #8e5a2b;
+  color: white;
+}
+
+/* SECTION */
+section {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+section h2 {
+  margin-bottom: 15px;
+  color: #8e5a2b;
+}
+
+section ul {
+  list-style: none;
+}
+
+section li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: white;
+  margin-top: 30px;
+}

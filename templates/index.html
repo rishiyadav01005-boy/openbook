@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OpenBook | Online Library</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Flask Static -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+  <h1>📚 OpenBook</h1>
+  <p>Free Online Library – Read Books Online</p>
+
+  <div style="margin-top:15px;">
+    <a href="/login" class="btn">Login</a>
+    <a href="/register" class="btn">Register</a>
+  </div>
+</header>
+
+<hr>
+
+<nav>
+  <button>Self Help</button>
+  <button>Spiritual</button>
+  <button>Programming</button>
+  <button>Fiction</button>
+  <button>Poetry</button>
+</nav>
+
+<section>
+  <h2>📖 Available Categories</h2>
+
+  <ul>
+    <li>Self Help (Atomic Habits, Mindset, Psychology of Money)</li>
+    <li>Spiritual (Bhagavad Gita, Power of Now, Ikigai)</li>
+    <li>Programming (Eloquent JavaScript, Learning Python)</li>
+    <li>Fiction (Harry Potter, The Alchemist, 1984)</li>
+    <li>Poetry (Milk & Honey, Rumi, Sun and Her Flowers)</li>
+  </ul>
+
+  <p style="margin-top:20px;">
+    🔐 <strong>Login required to read books</strong>
+  </p>
+</section>
+
+<footer>
+  <p>© 2026 OpenBook | Educational use only</p>
+</footer>
+
+</body>
+</html>

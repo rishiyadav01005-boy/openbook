@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>OpenBook Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+
+<body>
+
+    <header class="navbar">
+  <div class="nav-left">
+    <span class="logo">📚 OpenBook</span>
+  </div>
+
+  <div class="nav-right">
+    <span class="welcome">Welcome, {{ user }}</span>
+    <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+  </div>
+</header>
+
+
+    <hr>
+
+  {% for category, books in categories.items() %}
+  <h2 class="category-title">{{ category }}</h2>
+
+  <div class="book-grid">
+    {% for book in books %}
+      <div class="book-card">
+        <img src="{{ url_for('static', filename='images/all-book.png') }}">
+
+        <h3>{{ book.replace('.pdf','').title() }}</h3>
+
+        <a class="read-btn"
+           href="{{ url_for('static', filename='books/' + book) }}"
+           target="_blank">
+           Read Book
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+{% endfor %}
+
+
+</body>
+
+</html>
