@@ -15,7 +15,7 @@ BOOK_CATEGORIES = {
         "The Millionaire Next Door.pdf"
     ],
     "Spiritual": [
-        "bangvat gita.pdf",
+        "bhagvat gita.pdf",
         "the power of now.pdf",
         "meditation for beginners.pdf",
         "ikigai.pdf"
@@ -23,7 +23,8 @@ BOOK_CATEGORIES = {
     "Programming": [
         "Eloquent JavaScript.pdf",
         "Learning Python.pdf",
-        "artificial intelligence basics.pdf"
+        "artificial intelligence basics.pdf",
+        "let us c.pdf"
     ],
     "Fiction": [
         "harry potter.pdf",
@@ -74,6 +75,11 @@ init_db()
 @app.route("/")
 def home():
     return render_template("index.html")
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
 
 # ---------- REGISTER ----------
 @app.route("/register", methods=["GET", "POST"])

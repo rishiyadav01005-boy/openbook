@@ -2,46 +2,68 @@
 <html>
 
 <head>
-    <title>OpenBook Dashboard</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+  <title>OpenBook Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 
 <body>
 
+  <div class="page-wrapper">
+
+    <!-- HEADER (fixed position via layout) -->
     <header class="navbar">
-  <div class="nav-left">
-    <span class="logo">📚 OpenBook</span>
-  </div>
-
-  <div class="nav-right">
-    <span class="welcome">Welcome, {{ user }}</span>
-    <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
-  </div>
-</header>
-
-
-    <hr>
-
-  {% for category, books in categories.items() %}
-  <h2 class="category-title">{{ category }}</h2>
-
-  <div class="book-grid">
-    {% for book in books %}
-      <div class="book-card">
-        <img src="{{ url_for('static', filename='images/all-book.png') }}">
-
-        <h3>{{ book.replace('.pdf','').title() }}</h3>
-
-        <a class="read-btn"
-           href="{{ url_for('static', filename='books/' + book) }}"
-           target="_blank">
-           Read Book
+      <div class="logo">
+        <a href="{{ url_for('home') }}" class="logo-link">
+          <i class="fa-solid fa-book-open-reader"></i>
+          <span>OpenBook</span>
         </a>
       </div>
-    {% endfor %}
-  </div>
-{% endfor %}
 
+
+
+      <div class="nav-right">
+        <span class="welcome">Welcome, {{ user }}</span>
+        <a href="{{ url_for('logout') }}" class="logout-btn">
+          <i class="fa-solid fa-right-from-bracket"></i> Logout
+        </a>
+      </div>
+    </header>
+
+    <!-- ✅ SCROLLABLE CONTENT AREA -->
+    <main class="dashboard-content">
+
+      {% for category, books in categories.items() %}
+      <h2 class="category-title">{{ category }}</h2>
+
+      <div class="book-grid">
+        {% for book in books %}
+        <div class="book-card">
+          <img src="{{ url_for('static', filename='images/all-book.png') }}">
+          <h3>{{ book.replace('.pdf','').title() }}</h3>
+
+          <a class="read-btn" href="{{ url_for('static', filename='books/' + book) }}" target="_blank">
+            <i class="fa-solid fa-book"></i> Read Book
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+      {% endfor %}
+
+    </main>
+
+    <!-- FOOTER (always visible) -->
+    <footer>
+      <p>
+        OpenBook is an online library platform created to promote reading,
+        self-learning, and easy access to books across various categories.
+      </p>
+      <p>© 2026 OpenBook | Educational use only</p>
+      <p>Designed & Developed by <strong>Rishi Yadav</strong></p>
+    </footer>
+
+  </div>
 
 </body>
 

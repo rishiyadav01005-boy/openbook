@@ -1,28 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Login | OpenBook</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
+
 <body>
+    <header class="navbar">
+        <div class="nav-left">
+            <a href="/" class="logo-link">
+                <i class="fa-solid fa-book-open"></i>
+                <span>OpenBook</span>
+            </a>
+        </div>
+    </header>
 
-<div class="auth-box">
-    <h2>Login to OpenBook</h2>
+    <div class="auth-box">
+        <h2> <i class="fa-solid fa-user-lock"></i>
+            Login to <i class="fa-solid fa-book-open-reader"></i>OpenBook</h2>
 
-    <form method="POST">
-        <input type="email" name="email" placeholder="Email" required>
+        <form method="POST">
+            <div class="input-group">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
 
-        <input type="password" name="password" placeholder="Password" required>
+            <div class="input-group">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit"> <i class="fa-solid fa-right-to-bracket"></i> Login</button>
+        </form>
 
-        <button type="submit">Login</button>
-    </form>
-
-    <p class="switch">
-        New user?
-        <a href="/register">Create account</a>
-    </p>
-</div>
-
+        <p class="switch">
+            New user?
+            <a href="/register">Create account</a>
+        </p>
+    </div>
+    <footer class="auth-footer">
+        <p>
+            OpenBook is an online library platform created to promote reading,
+            self-learning, and easy access to books across various categories.
+        </p>
+        <p>© 2026 OpenBook | Educational use only</p>
+        <p>Designed & Developed by <strong>Rishi Yadav</strong></p>
+    </footer>
 </body>
+
 </html>

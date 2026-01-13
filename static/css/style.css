@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
 
 /* ===============================
-   GLOBAL RESET
+   RESET
 ================================ */
 * {
   margin: 0;
@@ -17,247 +17,179 @@
 ================================ */
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #f6f1eb; /* paper background */
-  color: #2e2e2e;
+  background: #F4F1EC;
+  color: #2E2E2E;
   line-height: 1.6;
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+  background: transparent;
+  overflow-x: hidden;
+}
+
+/* ===============================
+   FIXED LAYOUT (IMPORTANT)
+================================ */
+html, body {
+  height: 100%;
+  overflow: hidden;   /* ❌ body scroll band */
+}
+
+/* Background layer */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("../images/library.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(3px);
+  transform: scale(1.08);
+  z-index: -1;
+}
+
+/* ===============================
+   PAGE WRAPPER
+================================ */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 /* ===============================
    HEADER
 ================================ */
 header {
-  background-color: #2f2a25;
-  color: #ffffff;
-  padding: 30px 20px;
+  background: #2B2118;
+  color: #FFFFFF;
   text-align: center;
+  padding: 40px 20px;
+  flex-shrink: 0;
 }
 
 header h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 36px;
+  font-size: 40px;
   margin-bottom: 8px;
 }
 
 header p {
-  font-size: 14px;
-  color: #ddd;
+  font-size: 15px;
+  color: #D6CFC7;
 }
 
 /* ===============================
-   SECTIONS (CATEGORIES)
+   NAVBAR
+================================ */
+.navbar {
+  height: 64px;
+  background: #2B2118;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+  flex-shrink: 0;
+}
+
+/* LOGO */
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.logo-link i {
+  font-size: 24px;
+  color: #C89B3C;
+}
+
+.logo-link span {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: bisque;
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+.btn {
+  display: inline-block;
+  margin: 15px 8px 0;
+  padding: 12px 26px;
+  background: #C89B3C;
+  color: #2B2118;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #B68A2F;
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   NAV BUTTONS
+================================ */
+.nav-right {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-btn {
+  padding: 7px 16px;
+  font-size: 14px;
+  border: 1px solid #C89B3C;
+  border-radius: 20px;
+  background: transparent;
+  color: #C89B3C;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background: #B68A2F;
+  color: #2B2118;
+}
+
+.nav-btn i {
+  margin-right: 6px;
+}
+
+/* ===============================
+   MAIN CONTENT (ONLY SCROLL AREA)
+================================ */
+.main-content {
+  flex: 1;
+  overflow-y: auto;   /* ✅ sirf yahi scroll karega */
+  padding: 0;         /* ✅ scrollbar footer tak aayega */
+}
+
+/* ===============================
+   MAIN SECTION
 ================================ */
 section {
-  padding: 40px 8%;
+  max-width: 850px;
+  margin: auto;
+  background: blanchedalmond;
+  padding: 35px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 section h2 {
   font-family: 'Playfair Display', serif;
   font-size: 26px;
-  margin-bottom: 25px;
-  border-left: 5px solid #c07a3e;
+  color: saddlebrown;
+  margin-bottom: 20px;
+  border-left: 5px solid #C89B3C;
   padding-left: 12px;
-  color: #2f2a25;
-}
-
-/* ===============================
-   BOOK LIST GRID
-================================ */
-section {
-  display: block;
-}
-
-article {
-  background-color: #ffffff;
-  padding: 18px;
-  margin-bottom: 18px;
-  border-radius: 10px;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-article:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
-}
-
-article h3 {
-  font-size: 18px;
-  font-weight: 500;
-  color: #2e2e2e;
-}
-
-/* ===============================
-   READ BUTTON
-================================ */
-article a {
-  text-decoration: none;
-  padding: 8px 18px;
-  background-color: #c07a3e;
-  color: #ffffff;
-  border-radius: 20px;
-  font-size: 14px;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-article a:hover {
-  background-color: #a9652f;
-  transform: scale(1.05);
-}
-
-/* ===============================
-   DIVIDER
-================================ */
-hr {
-  border: none;
-  border-top: 1px solid #ddd;
-  margin: 0 8%;
-}
-
-/* ===============================
-   FOOTER
-================================ */
-footer {
-  background-color: #2f2a25;
-  color: #cccccc;
-  text-align: center;
-  padding: 18px;
-  font-size: 13px;
-}
-
-/* ===============================
-   RESPONSIVE (MOBILE)
-================================ */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 28px;
-  }
-
-  section {
-    padding: 30px 5%;
-  }
-
-  article {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  article a {
-    align-self: flex-start;
-  }
-}
-/* ===============================
-   CATEGORY NAVIGATION
-================================ */
-nav {
-  margin-top: 15px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-nav button {
-  background-color: transparent;
-  border: 1.5px solid #c07a3e;
-  color: #c07a3e;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 14px;
-  cursor: pointer;
-  font-family: 'Inter', sans-serif;
-  transition: all 0.2s ease;
-}
-
-nav button:hover {
-  background-color: #c07a3e;
-  color: #ffffff;
-}
-
-nav button:focus {
-  outline: none;
-}
-/* BODY */
-body {
-  background: linear-gradient(to right, #8e5a2b, #c68642);
-  color: #333;
-  min-height: 100vh;
-}
-
-/* HEADER */
-header {
-  text-align: center;
-  padding: 40px 20px;
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-
-header h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
-}
-
-header p {
-  font-size: 16px;
-  color: #555;
-}
-
-/* BUTTONS */
-.btn {
-  display: inline-block;
-  margin: 15px 10px 0;
-  padding: 12px 25px;
-  background: #b87333;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: #8e5a2b;
-}
-
-/* NAV */
-nav {
-  text-align: center;
-  margin: 25px 0;
-}
-
-nav button {
-  margin: 5px;
-  padding: 10px 18px;
-  border: none;
-  background: #fff;
-  color: #8e5a2b;
-  font-weight: bold;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-nav button:hover {
-  background: #8e5a2b;
-  color: white;
-}
-
-/* SECTION */
-section {
-  max-width: 800px;
-  margin: auto;
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-}
-
-section h2 {
-  margin-bottom: 15px;
-  color: #8e5a2b;
 }
 
 section ul {
@@ -265,14 +197,174 @@ section ul {
 }
 
 section li {
-  padding: 8px 0;
-  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+  border-bottom: 1px solid #EEE;
+  color: saddlebrown;
 }
 
-/* FOOTER */
-footer {
+/* ===============================
+   ABOUT PAGE
+================================ */
+.about-wrapper {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;   /* ✅ padding yahan shift */
+}
+
+.about-hero {
+  background: blanchedalmond;
+  padding: 40px;
+  border-radius: 14px;
   text-align: center;
-  padding: 20px;
-  color: white;
-  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.about-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  color: #2B2118;
+}
+
+.about-hero p {
+  color: saddlebrown;
+}
+
+.about-section {
+  background: bisque;
+  padding: 28px;
+  border-radius: 14px;
+  margin-bottom: 25px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.about-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: #2B2118;
+}
+
+.about-section h2 i {
+  color: #C89B3C;
+}
+
+.about-section p,
+.about-section li {
+  color: #2B2118;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+footer {
+  flex-shrink: 0;
+  margin-top: 0;
+  background: #2B2118;
+  color: blanchedalmond;
+  text-align: center;
+  padding: 18px;
+  font-size: 13px;
+}
+
+/* ===============================
+   CUSTOM SCROLLBAR
+================================ */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #EFE6D8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C89B3C;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B68A2F;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #C89B3C #EFE6D8;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 30px;
+  }
+
+  section {
+    padding: 25px;
+  }
+}
+/* ===============================
+   CATEGORY BUTTONS (STYLE.CSS)
+================================ */
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 25px 0;
+}
+
+nav button {
+  background: transparent;
+  border: 2px solid beige;
+  color: beige;
+  padding: 8px 18px;
+  border-radius: 25px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+nav button:hover {
+  background: bisque;
+  color: #8B4513;
+}
+/* Login Warning Style */
+.login-warning {
+    display: flex;                 /* Icon aur text side by side */
+    align-items: center;           /* Vertical center alignment */
+    background-color: #fff4e5;     /* Light orange background */
+    color: #b34700;                /* Dark orange text */
+    padding: 10px 15px;            /* Thoda padding */
+    border: 1px solid #ffa64d;     /* Border with orange shade */
+    border-radius: 8px;            /* Rounded corners */
+    font-size: 16px;               /* Text size */
+    margin: 15px 0;                /* Top-bottom spacing */
+    gap: 10px;                     /* Space between icon and text */
+}
+
+/* Lock icon styling */
+.login-warning i {
+    font-size: 20px;               /* Icon size */
+    color: #b34700;                /* Same color as text */
+}
+.nav-warning {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #B68A2F;
+  font-weight: bold;
+  font-size: 16px;
+
+  padding: 5px 12px;
+  background-color: transparent;
+  border-radius: 50px;
+  border:1px solid #B68A2F;
+  white-space: nowrap;   /* text break na ho */
 }

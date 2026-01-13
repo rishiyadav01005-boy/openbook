@@ -1,69 +1,186 @@
+/* ===============================
+   RESET
+================================ */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
+/* ===============================
+   BODY
+================================ */
 body {
-    height: 100vh;
-    background: linear-gradient(135deg, #2f2a25, #c07a3e);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #2B2118, #4A3728);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* ===============================
+   AUTH BOX
+================================ */
 .auth-box {
-    background: #ffffff;
-    width: 360px;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-    text-align: center;
+  background: bisque;
+  width: 380px;
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  text-align: center;
 }
 
+/* ===============================
+   TITLE
+================================ */
 .auth-box h2 {
-    margin-bottom: 20px;
-    color: #2f2a25;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 22px;
+  color:saddlebrown;
+  font-size: 26px;
 }
 
+/* ===============================
+   INPUTS
+================================ */
 .auth-box input {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    font-size: 14px;
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1.5px solid burlywood;
+  font-size: 14px;
 }
 
 .auth-box input:focus {
-    outline: none;
-    border-color: #c07a3e;
+  outline: none;
+  border-color: #C89B3C;
 }
 
+/* ===============================
+   BUTTON
+================================ */
 .auth-box button {
-    width: 100%;
-    padding: 12px;
-    margin-top: 15px;
-    border: none;
-    border-radius: 6px;
-    background: #c07a3e;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
+  width: 100%;
+  padding: 14px;
+  margin-top: 18px;
+  border: none;
+  border-radius: 30px;
+  background: #C89B3C;
+  color: #2B2118;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .auth-box button:hover {
-    background: #a9652f;
+  background: #B68A2F;
+  transform: translateY(-2px);
 }
 
+/* ===============================
+   SWITCH LINK
+================================ */
 .switch {
-    margin-top: 15px;
-    font-size: 14px;
+  margin-top: 18px;
+  font-size: 14px;
+  color: #555;
 }
 
 .switch a {
-    color: #c07a3e;
-    text-decoration: none;
-    font-weight: bold;
+  color: #C89B3C;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.switch a:hover {
+  text-decoration: underline;
+}
+/* ===== INPUT GROUP WITH ICON ===== */
+.input-group {
+  position: relative;
+  margin: 10px 0;
+}
+
+.input-group i {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  color: #C89B3C;
+  font-size: 14px;
+}
+
+.input-group input {
+  padding-left: 40px;
+}
+
+/* ===== TITLE ICON ===== */
+.auth-box h2 i {
+  color: #C89B3C;
+  margin-right: 6px;
+}
+
+/* ===== BUTTON ICON ===== */
+.auth-box button i {
+  margin-right: 6px;
+}
+input{
+  background-color: tan;
+}
+/* ===============================
+   AUTH NAVBAR
+================================ */
+.navbar {
+  height: 60px;
+  background: #2B2118;
+  display: flex;
+  align-items: center;
+  padding: 0 32px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+/* LOGO */
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.logo-link i {
+  font-size: 22px;
+  color: #C89B3C;
+}
+
+.logo-link span {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color:blanchedalmond;
+}
+
+/* ===============================
+   BODY ADJUSTMENT (for header)
+================================ */
+body {
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+
+/* ===============================
+   AUTH FOOTER
+================================ */
+.auth-footer {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 13px;
+  color: #E6D8C3;
 }

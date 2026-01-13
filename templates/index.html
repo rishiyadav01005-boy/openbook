@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>OpenBook | Online Library</title>
@@ -7,51 +8,82 @@
 
   <!-- Flask Static -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 
 </head>
 
 <body>
 
-<header>
-  <h1>📚 OpenBook</h1>
-  <p>Free Online Library – Read Books Online</p>
+  <div class="page-wrapper">
 
-  <div style="margin-top:15px;">
-    <a href="/login" class="btn">Login</a>
-    <a href="/register" class="btn">Register</a>
+
+    <header class="navbar">
+      <div class="nav-left">
+        <a href="/" class="logo-link">
+          <i class="fa-solid fa-book-open"></i>
+          <span>OpenBook</span>
+        </a>
+      </div>
+
+      <div class="nav-right">
+        <p class="nav-warning">
+          <i class="fas fa-lock"></i>
+          <strong>Login required to read books</strong>
+        </p>
+        <a href="/login" class="nav-btn">
+          <i class="fa-solid fa-right-to-bracket"></i> Login
+        </a>
+        <a href="/register" class="nav-btn outline">
+          <i class="fa-solid fa-user-plus"></i> Register
+        </a>
+        <a href="{{ url_for('about') }}" class="nav-btn">
+          <i class="fa-solid fa-circle-info"></i>About
+        </a>
+      </div>
+    </header>
+
+    <!-- NAV (fixed with header) -->
+    <nav>
+      <button>Self Help</button>
+      <button>Spiritual</button>
+      <button>Programming</button>
+      <button>Fiction</button>
+      <button>Poetry</button>
+    </nav>
+    <!-- ✅ ONLY THIS PART WILL SCROLL -->
+    <main class="main-content">
+      <section>
+        <h2><i class="fa-solid fa-book-open-reader"></i> Available Categories</h2>
+
+        <ul>
+          <li>Self Help (Atomic Habits, Mindset, Psychology of Money)</li>
+          <li>Spiritual (Bhagavad Gita, Power of Now, Ikigai)</li>
+          <li>Programming (Eloquent JavaScript, Learning Python)</li>
+          <li>Fiction (Harry Potter, The Alchemist, 1984)</li>
+          <li>Poetry (Milk & Honey, Rumi, Sun and Her Flowers)</li>
+        </ul>
+
+        <p class="login-warning">
+          <i class="fas-fa-lock"></i>
+          <strong>Login required to read books</strong>
+        </p>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>
+        OpenBook is an online library platform created to promote reading,
+        self-learning, and easy access to books across various categories.
+      </p>
+      <p>© 2026 OpenBook | Educational use only</p>
+      <p>Designed & Developed by <strong>Rishi Yadav</strong></p>
+    </footer>
+
   </div>
-</header>
-
-<hr>
-
-<nav>
-  <button>Self Help</button>
-  <button>Spiritual</button>
-  <button>Programming</button>
-  <button>Fiction</button>
-  <button>Poetry</button>
-</nav>
-
-<section>
-  <h2>📖 Available Categories</h2>
-
-  <ul>
-    <li>Self Help (Atomic Habits, Mindset, Psychology of Money)</li>
-    <li>Spiritual (Bhagavad Gita, Power of Now, Ikigai)</li>
-    <li>Programming (Eloquent JavaScript, Learning Python)</li>
-    <li>Fiction (Harry Potter, The Alchemist, 1984)</li>
-    <li>Poetry (Milk & Honey, Rumi, Sun and Her Flowers)</li>
-  </ul>
-
-  <p style="margin-top:20px;">
-    🔐 <strong>Login required to read books</strong>
-  </p>
-</section>
-
-<footer>
-  <p>© 2026 OpenBook | Educational use only</p>
-</footer>
 
 </body>
+
+
 </html>
