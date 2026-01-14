@@ -1,0 +1,142 @@
+/* =================================
+   DASHBOARD MOBILE RESPONSIVE
+================================= */
+
+/* Tablets & Mobiles */
+@media (max-width: 768px) {
+
+  /* Allow scrolling on mobile */
+  html, body {
+    overflow: auto;
+  }
+
+  .page-wrapper {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  /* ===============================
+     HEADER / NAVBAR
+  ================================ */
+  .header,
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 16px;
+    text-align: center;
+  }
+
+  .logo {
+    justify-content: center;
+  }
+
+  .logo span {
+    font-size: 18px;
+  }
+
+  .nav-right {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .welcome {
+    font-size: 13px;
+  }
+
+  .logout-btn {
+    font-size: 13px;
+    padding: 6px 14px;
+  }
+
+  /* ===============================
+     PAGE TITLES
+  ================================ */
+  .page-title {
+    margin: 15px;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .category-title {
+    margin: 20px 15px 10px;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  /* ===============================
+     DASHBOARD CONTENT
+  ================================ */
+  .dashboard-content {
+    overflow-y: visible;
+  }
+
+  /* ===============================
+     BOOK GRID
+  ================================ */
+  .books,
+  .book-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 14px;
+    padding: 0 15px;
+  }
+
+  /* ===============================
+     BOOK CARD
+  ================================ */
+  .book-card {
+    padding: 14px;
+    border-radius: 10px;
+  }
+
+  .book-card img {
+    height: 140px;
+  }
+
+  .book-card h3 {
+    font-size: 14px;
+  }
+
+  .read-btn {
+    font-size: 13px;
+    padding: 6px 14px;
+  }
+
+  /* ===============================
+     FOOTER
+  ================================ */
+  footer {
+    font-size: 12px;
+    padding: 14px;
+  }
+
+  hr {
+    width: 60%;
+  }
+}
+
+/* =================================
+   SMALL MOBILE DEVICES
+================================= */
+@media (max-width: 480px) {
+
+  .logo i {
+    font-size: 22px;
+  }
+
+  .logo span {
+    font-size: 16px;
+  }
+
+  .book-card img {
+    height: 120px;
+  }
+
+  .page-title {
+    font-size: 18px;
+  }
+
+  .category-title {
+    font-size: 16px;
+  }
+}

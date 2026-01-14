@@ -1,0 +1,83 @@
+/* ===============================
+   MOBILE RESPONSIVE CSS
+================================ */
+
+/* Tablet & Mobile */
+@media (max-width: 768px) {
+
+  html, body {
+    overflow: auto;
+  }
+
+  .page-wrapper {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  /* NAVBAR */
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 12px 16px;
+    gap: 10px;
+  }
+
+  .nav-right {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .nav-warning {
+    position: static;
+    transform: none;
+    font-size: 14px;
+  }
+
+  .nav-btn {
+    font-size: 13px;
+    padding: 6px 14px;
+  }
+
+  /* CATEGORY NAV */
+  nav {
+    margin: 15px 10px;
+    gap: 8px;
+  }
+
+  nav button {
+    font-size: 13px;
+    padding: 6px 14px;
+  }
+
+  /* CONTENT */
+  section {
+    margin: 15px;
+    padding: 20px;
+  }
+
+  section h2 {
+    font-size: 22px;
+  }
+
+  .login-warning {
+    font-size: 14px;
+  }
+
+  footer {
+    font-size: 12px;
+    padding: 14px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+
+  .logo-link span {
+    font-size: 18px;
+  }
+
+  section h2 {
+    font-size: 20px;
+  }
+}

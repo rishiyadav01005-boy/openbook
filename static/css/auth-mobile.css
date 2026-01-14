@@ -1,0 +1,152 @@
+/* =================================
+   AUTH (LOGIN / REGISTER) – MOBILE
+   Android Optimized
+================================= */
+
+/* All Mobiles & Tablets */
+@media (max-width: 768px) {
+
+  /* Prevent zoom issues */
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  /* ===============================
+   AUTH PAGE BACKGROUND
+================================ */
+  body {
+    min-height: 100vh;
+    padding-top: 72px;     /* Navbar space */
+    padding-bottom: 70px;  /* Footer space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-image: url("../images/auth-bg.jpg");
+  }
+
+  /* ===============================
+     NAVBAR
+  ================================ */
+  .navbar {
+    width: 100%;
+    min-height: 60px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .logo-link span {
+    font-size: 18px;
+  }
+
+  .logo-link i {
+    font-size: 20px;
+  }
+
+  /* ===============================
+     AUTH CONTAINER
+  ================================ */
+  .auth-box {
+    width: 95%;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 28px 22px;
+    border-radius: 16px;
+    box-sizing: border-box;
+  }
+
+  .auth-box h2 {
+    font-size: 22px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  /* ===============================
+     INPUTS
+  ================================ */
+  .auth-box input {
+    width: 100%;
+    font-size: 15px;
+    padding: 14px 14px;
+  }
+
+  .input-group {
+    position: relative;
+  }
+
+  .input-group input {
+    padding-left: 40px;
+  }
+
+  .input-group i {
+    font-size: 14px;
+    left: 14px;
+  }
+
+  /* ===============================
+     BUTTON
+  ================================ */
+  .auth-box button {
+    width: 100%;
+    font-size: 16px;
+    padding: 14px;
+    margin-top: 8px;
+  }
+
+  /* ===============================
+     SWITCH TEXT
+  ================================ */
+  .switch {
+    font-size: 14px;
+    margin-top: 14px;
+    text-align: center;
+  }
+
+  /* ===============================
+     FOOTER
+  ================================ */
+  .auth-footer {
+    width: 100%;
+    margin-top: auto;
+    padding: 12px 0;
+    font-size: 13px;
+    text-align: center;
+  }
+}
+
+/* =================================
+   SMALL ANDROID DEVICES
+================================= */
+@media (max-width: 480px) {
+
+  body {
+    padding-top: 68px;
+    padding-bottom: 64px;
+  }
+
+  .auth-box {
+    padding: 24px 18px;
+  }
+
+  .auth-box h2 {
+    font-size: 20px;
+  }
+
+  .auth-box input {
+    font-size: 14px;
+    padding: 13px;
+  }
+
+  .auth-box button {
+    font-size: 15px;
+    padding: 13px;
+  }
+}
