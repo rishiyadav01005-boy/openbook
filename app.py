@@ -1,4 +1,4 @@
-# UPDATED VERSION 
+# updated
 from flask import Flask, render_template, request, redirect, url_for, session, send_from_directory
 import sqlite3
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -7,6 +7,9 @@ import os
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "dev_key")
 
+# =========================
+# BOOKS & CATEGORIES
+# =========================
 BOOK_CATEGORIES = {
     "Self Help": [
         "atomic habit.pdf",
@@ -37,6 +40,17 @@ BOOK_CATEGORIES = {
         "the sun and her flowers.pdf",
         "rumi.pdf"
     ]
+}
+
+# =========================
+# CATEGORY IMAGES
+# =========================
+CATEGORY_IMAGES = {
+    "Self Help": "self help.png",
+    "Spiritual": "spiritual.png",
+    "Programming": "programming.png",
+    "Fiction": "fiction.png",
+    "Poetry": "poetry.png"
 }
 
 # =========================
@@ -80,7 +94,6 @@ def home():
 @app.route("/about")
 def about():
     return render_template("about.html")
-
 
 # ---------- REGISTER ----------
 @app.route("/register", methods=["GET", "POST"])
@@ -135,9 +148,26 @@ def dashboard():
     return render_template(
         "dashboard.html",
         user=session["user"],
-        categories=BOOK_CATEGORIES
+        categories=BOOK_CATEGORIES,
+        category_images=CATEGORY_IMAGES
     )
 
+# ---------- CATEGORY PAGE (PROTECTED) ----------
+@app.route("/category/<category_name>")
+def category_page(category_name):
+    if "user" not in session:
+        return redirect(url_for("login"))
+
+    # hyphen -> space, title case
+    category = category_name.replace("-", " ").title()
+    books = BOOK_CATEGORIES.get(category, [])
+
+    return render_template(
+        "category.html",
+        category=category,
+        books=books,
+        user=session["user"]
+    )
 
 # ---------- READ BOOK (PROTECTED) ----------
 @app.route("/book/<filename>")
@@ -158,7 +188,3 @@ def logout():
 # =========================
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
-
-
-
-

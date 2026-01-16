@@ -1,37 +1,67 @@
-/* =================================
-   DASHBOARD MOBILE RESPONSIVE
-================================= */
+/* updated */
+html, body {
+  height: 100%;
+  margin: 0;
+}
 
-/* Tablets & Mobiles */
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header fixed height */
+.navbar {
+  flex-shrink: 0;
+}
+
+/* Footer fixed height */
+footer {
+  flex-shrink: 0;
+}
+
+/* ONLY CONTENT SCROLLS */
+.dashboard-content {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 @media (max-width: 768px) {
 
-  /* Allow scrolling on mobile */
-  html, body {
-    overflow: auto;
+  .categories-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 14px;
+    padding: 0 15px;
   }
 
-  .page-wrapper {
-    height: auto;
-    min-height: 100vh;
+  .category-card img {
+    height: 150px;
   }
 
-  /* ===============================
-     HEADER / NAVBAR
-  ================================ */
-  .header,
+  .category-card h2 {
+    font-size: 16px;
+  }
+
+  .explore-btn {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  /* Navbar responsive */
   .navbar {
     flex-direction: column;
+    align-items: center;
     gap: 10px;
     padding: 12px 16px;
-    text-align: center;
-  }
-
-  .logo {
-    justify-content: center;
   }
 
   .logo span {
     font-size: 18px;
+  }
+
+  .logo i {
+    font-size: 22px;
   }
 
   .nav-right {
@@ -49,94 +79,87 @@
     padding: 6px 14px;
   }
 
-  /* ===============================
-     PAGE TITLES
-  ================================ */
-  .page-title {
-    margin: 15px;
-    font-size: 20px;
-    text-align: center;
-  }
-
-  .category-title {
-    margin: 20px 15px 10px;
-    font-size: 18px;
-    text-align: center;
-  }
-
-  /* ===============================
-     DASHBOARD CONTENT
-  ================================ */
-  .dashboard-content {
-    overflow-y: visible;
-  }
-
-  /* ===============================
-     BOOK GRID
-  ================================ */
-  .books,
-  .book-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 14px;
-    padding: 0 15px;
-  }
-
-  /* ===============================
-     BOOK CARD
-  ================================ */
-  .book-card {
-    padding: 14px;
-    border-radius: 10px;
-  }
-
-  .book-card img {
-    height: 140px;
-  }
-
-  .book-card h3 {
-    font-size: 14px;
-  }
-
-  .read-btn {
-    font-size: 13px;
-    padding: 6px 14px;
-  }
-
-  /* ===============================
-     FOOTER
-  ================================ */
   footer {
+    padding: 14px 16px;
     font-size: 12px;
-    padding: 14px;
-  }
-
-  hr {
-    width: 60%;
   }
 }
 
-/* =================================
-   SMALL MOBILE DEVICES
-================================= */
 @media (max-width: 480px) {
 
-  .logo i {
-    font-size: 22px;
+  .category-card img {
+    height: 130px;
+  }
+
+  .category-card h2 {
+    font-size: 14px;
+  }
+
+  .explore-btn {
+    font-size: 12px;
+    padding: 5px 10px;
   }
 
   .logo span {
     font-size: 16px;
   }
 
-  .book-card img {
-    height: 120px;
+  .logo i {
+    font-size: 20px;
   }
 
-  .page-title {
-    font-size: 18px;
+  .logout-btn {
+    font-size: 12px;
+    padding: 5px 12px;
   }
 
-  .category-title {
-    font-size: 16px;
+  footer {
+    font-size: 11px;
+    padding: 12px 14px;
   }
 }
+/* Dashboard Mobile Scrollbar */
+.dashboard-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dashboard-content::-webkit-scrollbar-track {
+  background: #efe6d8;
+  border-radius: 10px;
+}
+
+.dashboard-content::-webkit-scrollbar-thumb {
+  background: #c68642;
+  border-radius: 10px;
+  border: 2px solid #efe6d8;
+}
+
+.dashboard-content::-webkit-scrollbar-thumb:hover {
+  background: #a86a2f;
+}
+
+/* Firefox */
+.dashboard-content {
+  scrollbar-width: thin;
+  scrollbar-color: #c68642 #efe6d8;
+}
+@media (max-width: 768px) {
+
+  /* ONE CARD PER ROW */
+  .categories-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 🔥 single column */
+    gap: 16px;
+    padding: 15px;
+  }
+
+  .category-card {
+    width: 100%;
+  }
+
+  .category-card img {
+    height: 180px;
+    object-fit: cover;
+  }
+}
+/* updated */

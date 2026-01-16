@@ -1,0 +1,57 @@
+<!-- updated -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>{{ category }} Books</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/category.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/category-mobile.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+  <div class="page-wrapper">
+
+    <!-- HEADER -->
+    <header class="navbar">
+      <div class="logo">
+        <a href="{{ url_for('dashboard') }}" class="logo-link">
+          <i class="fa-solid fa-arrow-left"></i> Dashboard
+        </a>
+      </div>
+      <div class="nav-right">
+        <span class="welcome">{{ user }}</span>
+      </div>
+    </header>
+
+    <!-- SCROLLABLE CONTENT -->
+    <main class="dashboard-content">
+
+      <h2 class="category-title">{{ category }} Books</h2>
+
+      <div class="book-grid">
+        {% for book in books %}
+        <div class="book-card">
+          <img src="{{ url_for('static', filename='images/' + book.replace('.pdf','.png')) }}" alt="{{ book }}">
+          <h3>{{ book.replace('.pdf','').title() }}</h3>
+          <a class="read-btn" href="{{ url_for('static', filename='books/' + book) }}" target="_blank">
+            <i class="fa-solid fa-book-open"></i> Read
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>OpenBook is an online library platform.</p>
+      <p>© 2026 OpenBook | Educational use only</p>
+      <p>Designed & Developed by <strong>Rishi Yadav</strong></p>
+    </footer>
+
+  </div>
+
+</body>
+</html>

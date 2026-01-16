@@ -1,4 +1,4 @@
-<!-- modified newly-->
+<!-- updated -->
 <!DOCTYPE html>
 <html>
 
@@ -7,23 +7,20 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard-mobile.css') }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
 </head>
 
 <body>
 
   <div class="page-wrapper">
 
-    <!-- HEADER (fixed position via layout) -->
+    <!-- HEADER -->
     <header class="navbar">
       <div class="logo">
-        <a href="{{ url_for('home') }}" class="logo-link">
-          <i class="fa-solid fa-book-open-reader"></i>
+        <a href="/" class="logo-link">
+         <i class="fa-solid fa-book-open"></i>
           <span>OpenBook</span>
         </a>
       </div>
-
-
 
       <div class="nav-right">
         <span class="welcome">Welcome, {{ user }}</span>
@@ -33,36 +30,28 @@
       </div>
     </header>
 
-    <!-- ✅ SCROLLABLE CONTENT AREA -->
+    <!-- SCROLLABLE CONTENT -->
     <main class="dashboard-content">
 
-      {% for category, books in categories.items() %}
-      <h2 class="category-title">{{ category }}</h2>
+      <h1 class="page-title">Book Categories</h1>
 
-      <div class="book-grid">
-        {% for book in books %}
-        <div class="book-card">
-          <img src="{{ url_for('static',
-    filename='images/' + book.replace('.pdf', '.png')) }}" alt="{{ book }}">
-
-          <h3>{{ book.replace('.pdf','').title() }}</h3>
-
-          <a class="read-btn" href="{{ url_for('static', filename='books/' + book) }}" target="_blank">
-            <i class="fa-solid fa-book"></i> Read Book
+      <div class="categories-grid">
+        {% for category, image in category_images.items() %}
+        <div class="category-card">
+          <img src="{{ url_for('static', filename='images/' + image) }}" alt="{{ category }}">
+          <h2>{{ category }}</h2>
+          <a href="{{ url_for('category_page', category_name=category.lower().replace(' ', '-')) }}" class="explore-btn">
+            <i class="fa-solid fa-compass"></i> Explore
           </a>
         </div>
         {% endfor %}
       </div>
-      {% endfor %}
 
     </main>
 
-    <!-- FOOTER (always visible) -->
+    <!-- FOOTER -->
     <footer>
-      <p>
-        OpenBook is an online library platform created to promote reading,
-        self-learning, and easy access to books across various categories.
-      </p>
+      <p>OpenBook is an online library platform created to promote reading.</p>
       <p>© 2026 OpenBook | Educational use only</p>
       <p>Designed & Developed by <strong>Rishi Yadav</strong></p>
     </footer>
@@ -70,5 +59,4 @@
   </div>
 
 </body>
-
 </html>

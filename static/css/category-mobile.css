@@ -1,0 +1,142 @@
+/* updated */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header fixed height */
+.navbar {
+  flex-shrink: 0;
+}
+
+/* Footer fixed height */
+footer {
+  flex-shrink: 0;
+}
+
+/* ONLY CONTENT SCROLLS */
+.dashboard-content {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 768px) {
+
+  .dashboard-content {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 15px;
+  }
+
+  .category-title {
+    font-size: 20px;
+    padding: 8px 10px;
+  }
+
+  .book-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 14px;
+  }
+
+  .book-card img {
+    height: 150px;
+  }
+
+  .book-card h3 {
+    font-size: 14px;
+  }
+
+  .read-btn {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .nav-right .welcome {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-card img {
+    height: 130px;
+  }
+
+  .book-card h3 {
+    font-size: 13px;
+  }
+
+  .read-btn {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .category-title {
+    font-size: 18px;
+  }
+}
+/* ===============================
+   CATEGORY PAGE SCROLLBAR - MOBILE
+================================ */
+
+/* Chrome, Edge, Safari */
+.dashboard-content::-webkit-scrollbar,
+.book-grid::-webkit-scrollbar {
+  width: 8px; /* slightly thinner for mobile */
+}
+
+.dashboard-content::-webkit-scrollbar-track,
+.book-grid::-webkit-scrollbar-track {
+  background: #efe6d8;
+  border-radius: 10px;
+}
+
+.dashboard-content::-webkit-scrollbar-thumb,
+.book-grid::-webkit-scrollbar-thumb {
+  background: #c68642;
+  border-radius: 10px;
+  border: 2px solid #efe6d8;
+}
+
+.dashboard-content::-webkit-scrollbar-thumb:hover,
+.book-grid::-webkit-scrollbar-thumb:hover {
+  background: #a86a2f;
+}
+
+/* Firefox */
+.dashboard-content,
+.book-grid {
+  scrollbar-width: thin;
+  scrollbar-color: #c68642 #efe6d8;
+}
+@media (max-width: 768px) {
+
+  /* BOOKS ONE BY ONE */
+  .book-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 🔥 single column */
+    gap: 16px;
+    padding: 15px;
+  }
+
+  .book-card {
+    width: 100%;
+  }
+
+  .book-card img {
+    height: 200px;
+    object-fit: cover;
+  }
+}
