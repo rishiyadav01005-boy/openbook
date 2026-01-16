@@ -111,7 +111,6 @@ body::before {
 .book-card {
   background: bisque;
   padding: 20px;
-  border: 5px solid burlywood;
   border-radius: 12px;
   text-align: center;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
@@ -136,7 +135,6 @@ body::before {
   object-fit: contain;
   border-radius: 8px;
   margin-bottom: 12px;
-  border:5px solid burlywood;
 }
 
 .book-card h3 {
