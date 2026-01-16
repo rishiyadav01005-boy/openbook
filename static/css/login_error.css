@@ -1,0 +1,90 @@
+/* ===== LOGIN ERROR PAGE ===== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1e1e2f, #0f0f18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.error-container {
+  width: 90%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  padding: 40px 30px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.error-container i {
+  font-size: 58px;
+  color: #ff4d4d;
+  margin-bottom: 18px;
+}
+
+.error-container h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.error-container p {
+  font-size: 16px;
+  opacity: 0.85;
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #ff4d4d, #ff7a18);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 77, 77, 0.4);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile friendly */
+@media (max-width: 480px) {
+  .error-container {
+    padding: 30px 20px;
+  }
+
+  .error-container h1 {
+    font-size: 26px;
+  }
+
+  .error-container i {
+    font-size: 50px;
+  }
+}

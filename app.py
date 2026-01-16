@@ -135,9 +135,11 @@ def login():
             session["user"] = user[1]   # username
             return redirect(url_for("dashboard"))
         else:
-            return "Invalid email or password!"
+            # ❌ Wrong email or password
+            return render_template("login_error.html"), 401
 
     return render_template("login.html")
+
 
 # ---------- DASHBOARD (PROTECTED) ----------
 @app.route("/dashboard")
@@ -182,6 +184,15 @@ def read_book(filename):
 def logout():
     session.clear()
     return redirect(url_for("login"))
+#------------ERROR------------
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+
+@app.errorhandler(500)
+def internal_server_error(e):
+    return render_template('500.html'), 500
 
 # =========================
 # RUN SERVER
