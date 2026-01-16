@@ -92,6 +92,8 @@ header p {
   align-items: center;
   padding: 0 32px;
   flex-shrink: 0;
+  border-bottom: 2px solid #c68642;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* LOGO */
@@ -264,6 +266,8 @@ footer {
   text-align: center;
   padding: 18px;
   font-size: 13px;
+  border-top: 2px solid #c68642;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* ===============================

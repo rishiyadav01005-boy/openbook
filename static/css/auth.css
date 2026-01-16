@@ -145,6 +145,8 @@ input{
   top: 0;
   left: 0;
   right: 0;
+  border-bottom: 2px solid #c68642;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* LOGO */
@@ -185,4 +187,7 @@ body {
   text-align: center;
   font-size: 13px;
   color: #E6D8C3;
+  background-color: #2B2118;
+  border-top: 2px solid #c68642;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
 }
