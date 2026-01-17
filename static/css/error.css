@@ -1,62 +1,86 @@
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-
+/* ===============================
+   BACKGROUND – OPENBOOK STYLE
+================================ */
 body {
-background: radial-gradient(circle at top, #1e1e2f, #0f0f18);
-height: 100vh;
-display: flex;
-justify-content: center;
-align-items: center;
-color: #fff;
+  background: radial-gradient(
+    circle at top,
+    #2a1e12,     /* dark brown */
+    #0f0b07      /* deep dark */
+  );
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #efe6d8; /* site text color */
 }
 
-
+/* ===============================
+   ERROR CONTAINER
+================================ */
 .error-container {
-text-align: center;
-background: rgba(255, 255, 255, 0.05);
-padding: 40px 30px;
-border-radius: 16px;
-box-shadow: 0 0 40px rgba(0,0,0,0.6);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 40px 32px;
+  border-radius: 18px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.65);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(198, 134, 66, 0.25);
 }
 
-
+/* ===============================
+   ICON
+================================ */
 .error-container i {
-font-size: 60px;
-color: #ff4d4d;
-margin-bottom: 20px;
+  font-size: 60px;
+  color: #c68642; /* OpenBook gold */
+  margin-bottom: 20px;
 }
 
-
+/* ===============================
+   ERROR CODE
+================================ */
 .error-container h1 {
-font-size: 72px;
-margin-bottom: 10px;
+  font-size: 72px;
+  margin-bottom: 10px;
+  color: #fde7c8;
 }
 
-
+/* ===============================
+   MESSAGE
+================================ */
 .error-container p {
-font-size: 18px;
-opacity: 0.85;
-margin-bottom: 25px;
+  font-size: 18px;
+  opacity: 0.9;
+  margin-bottom: 25px;
+  color: #efe6d8;
 }
 
-
+/* ===============================
+   BUTTON – OPENBOOK STYLE
+================================ */
 .btn {
-text-decoration: none;
-padding: 12px 24px;
-background: linear-gradient(135deg, #ff4d4d, #ff7a18);
-color: #fff;
-border-radius: 30px;
-font-weight: 600;
-transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  padding: 12px 26px;
+  background: linear-gradient(
+    135deg,
+    #c68642,
+    #a86a2f
+  );
+  color: #fff;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-
+/* Hover effect */
 .btn:hover {
-transform: translateY(-2px);
-box-shadow: 0 10px 25px rgba(255,77,77,0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(198, 134, 66, 0.45);
 }
