@@ -374,3 +374,7 @@ nav button:hover {
   border:1px solid #B68A2F;
   white-space: nowrap;   /* text break na ho */
 }
+.logo {
+    width: 160px;   /* yahan value badhao/ghatao */
+    height: auto;   /* image distort na ho */
+}
