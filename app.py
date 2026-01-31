@@ -16,7 +16,8 @@ BOOK_CATEGORIES = {
         "mindset.pdf",
         "the psychology of money.pdf",
         "rich dad and poor dad.pdf",
-        "The Millionaire Next Door.pdf"
+        "The Millionaire Next Door.pdf",
+        "eat that frog.pdf"
     ],
     "Spiritual": [
         "bhagvat gita.pdf",
