@@ -17,6 +17,7 @@ BOOK_CATEGORIES = {
         "the psychology of money.pdf",
         "rich dad and poor dad.pdf",
         "The Millionaire Next Door.pdf",
+        "Japanese Way of Learning.pdf",
         "eat that frog.pdf"
     ],
     "Spiritual": [
