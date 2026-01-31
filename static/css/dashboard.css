@@ -69,13 +69,14 @@ body::before {
 
 .logo i {
   font-size: 26px;
-  color: #c68642;
+  color: #C89B3C;
 }
 
 .logo span {
-  color: bisque;
+  font-family: 'Playfair Display', serif;
   font-size: 22px;
-  font-weight: bold;
+  font-weight: 600;
+  color: bisque;
 }
 
 .nav-right {
